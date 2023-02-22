@@ -11,11 +11,11 @@ def info(_, message):
         user = message.from_user.id
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
-    if not message.reply_to_message and message.text != "/info" and user.isnumeric(
+    if not message.reply_to_message and message.text != "info" and user.isnumeric(
     ):
         user = message.text.split(" ")[1]
 
-    if not message.reply_to_message and message.text != "/info" and not user.isnumeric(
+    if not message.reply_to_message and message.text != "info" and not user.isnumeric(
     ):
         k = app.get_users(message.text.split(" ")[1])
         user = k.id
