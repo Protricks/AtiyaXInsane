@@ -82,7 +82,7 @@ async def gen_thumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"Atiya/assets/Atiya.png")
+        bg = Image.open(f"AtiyaMusic/assets/AnonX.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -117,10 +117,10 @@ async def gen_thumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("Atiya/assets/font2.ttf", 45)
-        ImageFont.truetype("Atiya/assets/font2.ttf", 70)
-        arial = ImageFont.truetype("Atiya/assets/font2.ttf", 30)
-        ImageFont.truetype("Atiya/assets/font.ttf", 30)
+        font = ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 45)
+        ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 30)
+        ImageFont.truetype("AtiyaMusic/assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
@@ -222,7 +222,7 @@ async def gen_qthumb(videoid, user_id):
         x = f.resize((107, 107))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"Atiya/assets/Atiya.png")
+        bg = Image.open(f"AtiyaMusic/assets/AnonX.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -257,10 +257,10 @@ async def gen_qthumb(videoid, user_id):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("Atiya/assets/font2.ttf", 45)
-        ImageFont.truetype("Atiya/assets/font2.ttf", 70)
-        arial = ImageFont.truetype("Atiya/assets/font2.ttf", 30)
-        ImageFont.truetype("Atiya/assets/font.ttf", 30)
+        font = ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 45)
+        ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("AtiyaMusic/assets/font2.ttf", 30)
+        ImageFont.truetype("AtiyaMusic/assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
             draw.text(
