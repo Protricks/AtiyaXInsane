@@ -8,7 +8,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 import config
 from config import BANNED_USERS
 from AtiyaMusic import LOGGER, app, userbot
-from AtiyaMusic.core.call import AtiyaMusic
+from AtiyaMusic.core.call import Atiya
 from AtiyaMusic.plugins import ALL_MODULES
 from AtiyaMusic.utils.database import get_banned_users, get_gbanned
 
@@ -50,13 +50,13 @@ async def init():
         "Necessary Modules Imported Successfully."
     )
     await userbot.start()
-    await AtiyaMusic.start()
+    await Atiya.start()
     try:
-        await AtiyaMusic.stream_decall("https://telegra.ph/file/de3464aa7d6bfafdd2dc3.mp4")
+        await Atiya.stream_decall("https://telegra.ph/file/de3464aa7d6bfafdd2dc3.mp4")
     except:
         pass
     try:
-        await AtiyaMusic.stream_call(
+        await Atiya.stream_call(
             "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4"
         )
     except NoActiveGroupCall:
@@ -66,7 +66,7 @@ async def init():
         sys.exit()
     except:
         pass
-    await AtiyaMusic.decorators()
+    await Atiya.decorators()
     LOGGER("AtiyaMusic").info("\x41\x6e\x6f\x6e\x58\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x20\x53\x74\x61\x72\x74\x65\x64\x20\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e\x2e\x2e\n\n\x4e\x6f\x77\x20\x64\x72\x6f\x70\x20\x79\x6f\x75\x72\x20\x67\x69\x72\x6c\x66\x72\x69\x65\x6e\x64\'\x73\x20\x6e\x75\x64\x65\x73\x20\x61\x74\x20\x40\x44\x65\x76\x69\x6c\x73\x48\x65\x61\x76\x65\x6e\x4d\x46")
     await idle()
 
