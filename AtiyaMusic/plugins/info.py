@@ -17,7 +17,7 @@ def info(_, message):
 
     if not message.reply_to_message and message.text != "/info" and not user.isnumeric(
     ):
-        k = app.get_users(message.text.split(" ")[1])
+        k = bot.get_users(message.text.split(" ")[1])
         user = k.id
 
     if user == OWNER:
@@ -29,18 +29,18 @@ def info(_, message):
     else:
         status = "member"
 
-    pfp_count = app.get_profile_photos_count(user)
+    pfp_count = bot.get_profile_photos_count(user)
 
     if not pfp_count == 0:
-        pfp = app.get_profile_photos(user, limit=1)
+        pfp = bot.get_profile_photos(user, limit=1)
         pfp_ = pfp[0]['thumbs'][0]['file_id']
 
-    foo = app.get_users(user)
+    foo = bot.get_users(user)
     data = f"""**First Name** : {foo.first_name}
 **Last Name**: {foo.last_name}
 **Telegram Id**: {foo.id}
 **PermaLink**: {foo.mention(foo.first_name)}
-**is_app**: {foo.is_app}
+**is_bot**: {foo.is_bot}
 **Status**: {status}
 """
 
