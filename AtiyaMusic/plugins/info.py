@@ -7,7 +7,7 @@ sudos = 5610061820
 
 @app.on_message(filters.command("info"))
 def info(_, message):
-    if message.text == "/info":
+    if message.text == "info":
         user = message.from_user.id
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
